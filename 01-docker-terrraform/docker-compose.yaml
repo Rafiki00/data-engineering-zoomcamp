@@ -1,5 +1,4 @@
 services:
-  # Postgres database container
   db:
     container_name: postgres
     image: postgres:17-alpine
@@ -10,9 +9,7 @@ services:
     ports:
       - '5433:5432'
     volumes:
-      - vol-pgdata:/var/lib/postgresql/data
-
-  # pgAdmin container
+      - ./data/postgres:/var/lib/postgresql/data    
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4:latest
@@ -22,16 +19,4 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - vol-pgadmin_data:/var/lib/pgadmin
-      - vol-pgadmin_servers:/pgadmin4/servers  # Added this line for server definitions
-    depends_on:
-      - db
-
-# Named volumes for data persistence
-volumes:
-  vol-pgdata:
-    name: vol-pgdata
-  vol-pgadmin_data:
-    name: vol-pgadmin_data
-  vol-pgadmin_servers:
-    name: vol-pgadmin_servers
+      - ./data/pgadmin:/var/lib/pgadmin
