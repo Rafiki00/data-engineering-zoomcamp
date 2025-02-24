@@ -4,38 +4,31 @@
     )
 }}
 
-WITH trip_dates AS (
-    -- Join trips with dim_date to extract year and quarter
+WITH trips AS (
     SELECT 
-        t.service_type,
-        d.year,
-        d.quarter,
-        SUM(t.total_amount) AS quarterly_revenue
-    FROM {{ ref('fact_trips') }} t
-    INNER JOIN {{ ref('dim_date') }} d 
-        ON DATE(t.pickup_datetime) = d.date_day  -- Ensure date match
-    GROUP BY t.service_type, d.year, d.quarter
+        tripid,
+        service_type,
+        total_amount,
+        DATE(trips_unioned.pickup_datetime) AS trip_date
+    FROM {{ ref('fact_trips') }}
 ),
-
-quarterly_growth AS (
-    -- Calculate Year-over-Year (YoY) Growth
+trip_with_quarter AS (
     SELECT 
-        td.*,
-        LAG(td.quarterly_revenue) OVER (
-            PARTITION BY td.service_type, td.quarter 
-            ORDER BY td.year
-        ) AS prev_year_revenue,
-        ROUND(
-            SAFE_DIVIDE(td.quarterly_revenue - LAG(td.quarterly_revenue) OVER (
-                PARTITION BY td.service_type, td.quarter 
-                ORDER BY td.year
-            ), LAG(td.quarterly_revenue) OVER (
-                PARTITION BY td.service_type, td.quarter 
-                ORDER BY td.year
-            )) * 100, 2
-        ) AS yoy_growth_percentage
-    FROM trip_dates td
+        t.tripid,
+        t.service_type,
+        t.total_amount,
+        d.year_quarter
+    FROM trips t
+    INNER JOIN {{ ref('dim_date') }} d
+        ON t.trip_date = d.date_day
+),
+quarterly_revenue AS (
+    SELECT
+        year_quarter,
+        service_type,
+        SUM(total_amount) AS total_revenue
+    FROM trip_with_quarter
+    GROUP BY year_quarter, service_type
 )
 
-SELECT * FROM quarterly_growth
-ORDER BY service_type, year, quarter;
+SELECT * FROM quarterly_revenue;
