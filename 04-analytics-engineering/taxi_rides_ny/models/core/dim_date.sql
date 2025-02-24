@@ -1,6 +1,6 @@
 WITH date_series AS (
     SELECT 
-        DATE('2019-01-01') + INTERVAL n DAY AS date_day
+        CAST(DATE('2019-01-01') + INTERVAL n DAY AS DATE) AS date_day
     FROM UNNEST(GENERATE_ARRAY(0, 365 * 10)) AS n -- 10 years of dates
 )
 
