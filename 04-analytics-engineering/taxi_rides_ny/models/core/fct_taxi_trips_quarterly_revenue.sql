@@ -1,34 +1,30 @@
-{{
-    config(
-        materialized='table'
-    )
-}}
+WITH trip_data AS (
+    SELECT 
+        pickup_datetime,
+        fare_amount,
+        service_type
+    FROM `dbt_rllopis.fact_trips`
+),
 
-WITH trips AS (
+revenue_by_quarter AS (
     SELECT 
-        tripid,
-        service_type,
-        total_amount,
-        DATE(trips_unioned.pickup_datetime) AS trip_date
-    FROM {{ ref('fact_trips') }}
-),
-trip_with_quarter AS (
-    SELECT 
-        t.tripid,
+        d.year_quarter,
         t.service_type,
-        t.total_amount,
-        d.year_quarter
-    FROM trips t
-    INNER JOIN {{ ref('dim_date') }} d
-        ON t.trip_date = d.date_day
-),
-quarterly_revenue AS (
-    SELECT
-        year_quarter,
-        service_type,
-        SUM(total_amount) AS total_revenue
-    FROM trip_with_quarter
-    GROUP BY year_quarter, service_type
+        SUM(t.fare_amount) AS total_revenue
+    FROM trip_data t
+    JOIN `dbt_rllopis.dim_date` d 
+        ON DATE(t.pickup_datetime) = d.date_day
+    GROUP BY d.year_quarter, t.service_type
 )
 
-SELECT * FROM quarterly_revenue;
+SELECT 
+    year_quarter,
+    service_type,
+    total_revenue,
+    LAG(total_revenue) OVER (PARTITION BY service_type ORDER BY year_quarter) AS prev_quarter_revenue,
+    SAFE_DIVIDE(total_revenue - LAG(total_revenue) OVER (PARTITION BY service_type ORDER BY year_quarter), 
+                LAG(total_revenue) OVER (PARTITION BY service_type ORDER BY year_quarter)) AS revenue_growth,
+    LAG(total_revenue, 4) OVER (PARTITION BY service_type ORDER BY year_quarter) AS prev_year_revenue,
+    SAFE_DIVIDE(total_revenue - LAG(total_revenue, 4) OVER (PARTITION BY service_type ORDER BY year_quarter), 
+                LAG(total_revenue, 4) OVER (PARTITION BY service_type ORDER BY year_quarter)) AS yoy_revenue_growth
+FROM revenue_by_quarter
