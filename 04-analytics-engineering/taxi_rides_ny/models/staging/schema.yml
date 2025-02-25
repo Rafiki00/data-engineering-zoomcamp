@@ -8,6 +8,7 @@ sources:
     tables:
       - name: green_tripdata
       - name: yellow_tripdata
+      - name: fhv_tripdata
          # freshness:
            # error_after: {count: 6, period: hour}
 
@@ -194,3 +195,23 @@ models:
             description: Total amount of all tolls paid in trip.
           - name: Total_amount 
             description: The total amount charged to passengers. Does not include cash tips.
+
+    - name: stg_fhv_tripdata
+      description: Staging table for FHV trip data from 2019
+      columns:
+          - name: dispatching_base_num
+            description: The dispatching base number
+          - name: pickup_datetime
+            description: The date and time when the trip started
+          - name: dropoff_datetime
+            description: The date and time when the trip ended
+          - name: pickup_location_id
+            description: The TLC Taxi Zone where the trip began
+          - name: dropoff_location_id
+            description: The TLC Taxi Zone where the trip ended
+          - name: sr_flag
+            description: Indicates if this trip was a shared ride
+          - name: affiliated_base_number
+            description: Affiliated base number
+
+      
