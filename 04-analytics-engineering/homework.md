@@ -195,3 +195,12 @@ For the Trips that respectively started from Newark Airport, SoHo, and Yorkville
 - LaGuardia Airport, Saint Albans, Howard Beach
 - LaGuardia Airport, Rosedale, Bath Beach
 - LaGuardia Airport, Yorkville East, Greenpoint
+
+**Answer:**
+
+- `LaGuardia Airport, Chinatown, Garment District`
+
+
+Issued the query, had to change the model name due to issues with the name.
+
+![alt text](image-4.png)
