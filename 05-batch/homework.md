@@ -111,3 +111,6 @@ Using the zone lookup data and the Yellow October 2024 data, what is the name of
 
 **Answer:**
 
+- `Governor's Island/Ellis Island/Liberty Island`
+
+![alt text](image-4.png)
