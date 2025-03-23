@@ -180,9 +180,9 @@ I've sadly not been able to fully implement the job but I got this far:
 
 Then in pgadmin:
 
-![alt text](image-5.png)
+![alt text](image-6.png)
 
 Judging by this:
-1st place - 91 (Forest Hills) as a dropoff and pickup
+1st place - 74 (East Harlem North) pickup to 75 (East Harlem South) dropoff
 2nd place - 7 (Astoria) as a dropoff and pickup
-3rd place - 82 (Elmhurst) pickup and 138 (LaGuardia Airport) drop off
+3rd place - 95 (Forest Hills) as a dropoff and pickup
