@@ -1,0 +1,474 @@
+
+
+============================== 2025-04-06 12:14:29.102595 | 15ba7da4-afd3-47dc-a3c2-55757a4d87ee ==============================
+[0m12:14:29.102595 [info ] [MainThread]: Running with dbt=1.4.9
+[0m12:14:29.106178 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/opt/dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['crime_fact'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m12:14:29.110245 [debug] [MainThread]: Tracking: tracking
+[0m12:14:29.117465 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f885ce720d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f885ce722b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f885ce72ca0>]}
+[0m12:14:29.153383 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m12:14:29.162752 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m12:14:29.164384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '15ba7da4-afd3-47dc-a3c2-55757a4d87ee', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f885cf003d0>]}
+[0m12:14:30.860696 [debug] [MainThread]: 1699: static parser successfully parsed mart/crime_fact.sql
+[0m12:14:30.888636 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f887ea35c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f887ea272e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f887ea85130>]}
+[0m12:14:30.889934 [debug] [MainThread]: Flushing usage events
+[0m12:14:31.081095 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.boston_crime_project.crime_fact' (models/mart/crime_fact.sql) depends on a node named 'crime_incidents_stg' which was not found
+
+
+============================== 2025-04-06 12:23:28.765757 | 71b0b386-0e03-43be-aa59-2cd3ab0b41c1 ==============================
+[0m12:23:28.765757 [info ] [MainThread]: Running with dbt=1.4.9
+[0m12:23:28.769122 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/opt/dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['crime_fact'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m12:23:28.770504 [debug] [MainThread]: Tracking: tracking
+[0m12:23:28.777678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f850ac98ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f850ac98d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f850ac98d60>]}
+[0m12:23:28.796776 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m12:23:28.815559 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m12:23:28.818374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '71b0b386-0e03-43be-aa59-2cd3ab0b41c1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f850acb20d0>]}
+[0m12:23:29.913479 [debug] [MainThread]: 1699: static parser successfully parsed mart/crime_fact.sql
+[0m12:23:30.075343 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '71b0b386-0e03-43be-aa59-2cd3ab0b41c1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f85308f7d90>]}
+[0m12:23:30.112331 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '71b0b386-0e03-43be-aa59-2cd3ab0b41c1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8531996460>]}
+[0m12:23:30.118092 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 337 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m12:23:30.122870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '71b0b386-0e03-43be-aa59-2cd3ab0b41c1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f850acb28b0>]}
+[0m12:23:30.130686 [info ] [MainThread]: 
+[0m12:23:30.142309 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:23:30.150896 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5'
+[0m12:23:30.155708 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:23:30.166421 [debug] [ThreadPool]: BigQuery adapter: Got an error when attempting to create a bigquery client: '[Errno 2] No such file or directory: '/keys/creds.json''
+[0m12:23:30.176762 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:23:30.180445 [debug] [MainThread]: Connection 'list_galvanic-flame-447801-n5' was properly closed.
+[0m12:23:30.183363 [info ] [MainThread]: 
+[0m12:23:30.187381 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.05 seconds (0.05s).
+[0m12:23:30.190471 [error] [MainThread]: Encountered an error:
+Database Error
+  [Errno 2] No such file or directory: '/keys/creds.json'
+[0m12:23:30.193603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f85308b3a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f85308b38e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f85308b31f0>]}
+[0m12:23:30.196120 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-04-06 12:39:38.650253 | 01d3355d-01fd-42dd-b14a-8cc8dfc12a0b ==============================
+[0m12:39:38.650253 [info ] [MainThread]: Running with dbt=1.4.9
+[0m12:39:38.653588 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/opt/dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['crime_fact'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m12:39:38.655114 [debug] [MainThread]: Tracking: tracking
+[0m12:39:38.663219 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb637bc1fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb637bc1ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb637bc1d60>]}
+[0m12:39:38.688745 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m12:39:38.744551 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m12:39:38.746626 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '01d3355d-01fd-42dd-b14a-8cc8dfc12a0b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb637bdd820>]}
+[0m12:39:40.404484 [debug] [MainThread]: 1699: static parser successfully parsed mart/crime_fact.sql
+[0m12:39:40.586920 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '01d3355d-01fd-42dd-b14a-8cc8dfc12a0b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb65e939580>]}
+[0m12:39:40.619796 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '01d3355d-01fd-42dd-b14a-8cc8dfc12a0b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb65d7f3940>]}
+[0m12:39:40.625044 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 337 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m12:39:40.631318 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '01d3355d-01fd-42dd-b14a-8cc8dfc12a0b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb65d83ccd0>]}
+[0m12:39:40.641572 [info ] [MainThread]: 
+[0m12:39:40.657290 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:39:40.670558 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5'
+[0m12:39:40.676643 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:39:41.499887 [debug] [ThreadPool]: Acquiring new bigquery connection 'create_galvanic-flame-447801-n5_boston_crime_boston_crime'
+[0m12:39:41.506561 [debug] [ThreadPool]: Acquiring new bigquery connection 'create_galvanic-flame-447801-n5_boston_crime_boston_crime'
+[0m12:39:41.511557 [debug] [ThreadPool]: Creating schema "ReferenceKeyMsg(database='galvanic-flame-447801-n5', schema='boston_crime_boston_crime', identifier=None)"
+[0m12:39:41.566426 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:39:41.701974 [debug] [ThreadPool]: On create_galvanic-flame-447801-n5_boston_crime_boston_crime: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "my_boston_crime_profile", "target_name": "dev", "connection_name": "create_galvanic-flame-447801-n5_boston_crime_boston_crime"} */
+create schema if not exists `galvanic-flame-447801-n5`.`boston_crime_boston_crime`
+  
+[0m12:39:43.347193 [debug] [ThreadPool]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=galvanic-flame-447801-n5&j=bq:US:fc61cea6-3023-43c5-9a4c-1e9df1f55e05&page=queryresults
+[0m12:39:43.363145 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5_boston_crime_boston_crime'
+[0m12:39:43.367968 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:39:43.950259 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '01d3355d-01fd-42dd-b14a-8cc8dfc12a0b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb65d7f35e0>]}
+[0m12:39:43.952190 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:39:43.953476 [info ] [MainThread]: 
+[0m12:39:43.974021 [debug] [Thread-1  ]: Began running node model.boston_crime_project.crime_fact
+[0m12:39:43.976199 [info ] [Thread-1  ]: 1 of 1 START sql incremental model boston_crime_boston_crime.crime_fact ........ [RUN]
+[0m12:39:43.978410 [debug] [Thread-1  ]: Acquiring new bigquery connection 'model.boston_crime_project.crime_fact'
+[0m12:39:43.979542 [debug] [Thread-1  ]: Began compiling node model.boston_crime_project.crime_fact
+[0m12:39:43.984656 [debug] [Thread-1  ]: Writing injected SQL for node "model.boston_crime_project.crime_fact"
+[0m12:39:44.003574 [debug] [Thread-1  ]: Timing info for model.boston_crime_project.crime_fact (compile): 2025-04-06 12:39:43.980717 => 2025-04-06 12:39:44.003430
+[0m12:39:44.004675 [debug] [Thread-1  ]: Began executing node model.boston_crime_project.crime_fact
+[0m12:39:44.095169 [debug] [Thread-1  ]: Writing runtime sql for node "model.boston_crime_project.crime_fact"
+[0m12:39:44.192960 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:39:44.352738 [debug] [Thread-1  ]: On model.boston_crime_project.crime_fact: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "my_boston_crime_profile", "target_name": "dev", "node_id": "model.boston_crime_project.crime_fact"} */
+
+  
+    
+
+    create or replace table `galvanic-flame-447801-n5`.`boston_crime_boston_crime`.`crime_fact`
+    partition by range_bucket(
+            year,
+            generate_array(, , )
+        )
+    
+    OPTIONS()
+    as (
+      
+
+WITH casted AS (
+    SELECT
+        CAST(INCIDENT_NUMBER AS STRING) AS incident_number,
+        CAST(OFFENSE_CODE AS INT64) AS offense_code,
+        OFFENSE_CODE_GROUP AS offense_code_group,
+        OFFENSE_DESCRIPTION AS offense_description,
+        DISTRICT AS district,
+        REPORTING_AREA AS reporting_area,
+        SHOOTING AS shooting,
+        -- if OCCRURRED_ON_DATE is actually a datetime string, parse to timestamp
+        CAST(OCCURRED_ON_DATE AS TIMESTAMP) AS occurred_on_date,
+        CAST(YEAR AS INT64) AS year,
+        CAST(MONTH AS INT64) AS month,
+        DAY_OF_WEEK AS day_of_week,
+        CAST(HOUR AS INT64) AS hour,
+        UCR_PART AS ucr_part,
+        STREET AS street,
+        CAST(Lat AS FLOAT64) AS lat,
+        CAST(Long AS FLOAT64) AS long
+    FROM `galvanic-flame-447801-n5`.`boston_crime`.`crime_incidents_stg`
+)
+
+SELECT * FROM casted
+    );
+  
+[0m12:39:44.877607 [debug] [Thread-1  ]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('Syntax error: Expected ")" but got "," at [9:28]; reason: invalidQuery, location: query, message: Syntax error: Expected ")" but got "," at [9:28]')
+[0m12:39:45.697450 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=galvanic-flame-447801-n5&j=bq:US:5850eb1c-c573-4b4d-8659-2184ed7b9e68&page=queryresults
+[0m12:39:45.703922 [debug] [Thread-1  ]: Timing info for model.boston_crime_project.crime_fact (execute): 2025-04-06 12:39:44.005514 => 2025-04-06 12:39:45.703617
+[0m12:39:45.736731 [debug] [Thread-1  ]: Database Error in model crime_fact (models/mart/crime_fact.sql)
+  Syntax error: Expected ")" but got "," at [9:28]
+  compiled Code at target/run/boston_crime_project/models/mart/crime_fact.sql
+[0m12:39:45.742616 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '01d3355d-01fd-42dd-b14a-8cc8dfc12a0b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb65d741730>]}
+[0m12:39:45.748937 [error] [Thread-1  ]: 1 of 1 ERROR creating sql incremental model boston_crime_boston_crime.crime_fact  [[31mERROR[0m in 1.76s]
+[0m12:39:45.761212 [debug] [Thread-1  ]: Finished running node model.boston_crime_project.crime_fact
+[0m12:39:45.773442 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:39:45.780077 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:39:45.784726 [debug] [MainThread]: Connection 'model.boston_crime_project.crime_fact' was properly closed.
+[0m12:39:45.789132 [info ] [MainThread]: 
+[0m12:39:45.794612 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 5.14 seconds (5.14s).
+[0m12:39:45.800653 [debug] [MainThread]: Command end result
+[0m12:39:45.891907 [info ] [MainThread]: 
+[0m12:39:45.900057 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m12:39:45.907321 [info ] [MainThread]: 
+[0m12:39:45.914493 [error] [MainThread]: [33mDatabase Error in model crime_fact (models/mart/crime_fact.sql)[0m
+[0m12:39:45.920005 [error] [MainThread]:   Syntax error: Expected ")" but got "," at [9:28]
+[0m12:39:45.925774 [error] [MainThread]:   compiled Code at target/run/boston_crime_project/models/mart/crime_fact.sql
+[0m12:39:45.932203 [info ] [MainThread]: 
+[0m12:39:45.938808 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m12:39:45.946450 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb65e9a69a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb65e883670>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb65d7f3a00>]}
+[0m12:39:45.953127 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-04-06 12:42:42.858718 | d85b70d9-0e83-4f64-83e2-2d8a4b8aa8fc ==============================
+[0m12:42:42.858718 [info ] [MainThread]: Running with dbt=1.4.9
+[0m12:42:42.862061 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/opt/dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['crime_fact'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m12:42:42.863532 [debug] [MainThread]: Tracking: tracking
+[0m12:42:42.871557 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f808d77efd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f808d77ed60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f808d77ee80>]}
+[0m12:42:42.900799 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m12:42:43.251567 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m12:42:43.253153 [debug] [MainThread]: Partial parsing: updated file: boston_crime_project://models/mart/crime_fact.sql
+[0m12:42:43.286790 [debug] [MainThread]: 1699: static parser successfully parsed mart/crime_fact.sql
+[0m12:42:43.322311 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd85b70d9-0e83-4f64-83e2-2d8a4b8aa8fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80af2ed0d0>]}
+[0m12:42:43.343753 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd85b70d9-0e83-4f64-83e2-2d8a4b8aa8fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80b03a2fa0>]}
+[0m12:42:43.344996 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 337 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m12:42:43.346235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd85b70d9-0e83-4f64-83e2-2d8a4b8aa8fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80b040a5b0>]}
+[0m12:42:43.348445 [info ] [MainThread]: 
+[0m12:42:43.351253 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:42:43.353302 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5'
+[0m12:42:43.354362 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:42:43.875385 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5_boston_crime_boston_crime'
+[0m12:42:43.876976 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:42:44.389676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd85b70d9-0e83-4f64-83e2-2d8a4b8aa8fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80af2edac0>]}
+[0m12:42:44.396493 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:42:44.401776 [info ] [MainThread]: 
+[0m12:42:44.474130 [debug] [Thread-1  ]: Began running node model.boston_crime_project.crime_fact
+[0m12:42:44.479309 [info ] [Thread-1  ]: 1 of 1 START sql incremental model boston_crime_boston_crime.crime_fact ........ [RUN]
+[0m12:42:44.486678 [debug] [Thread-1  ]: Acquiring new bigquery connection 'model.boston_crime_project.crime_fact'
+[0m12:42:44.490904 [debug] [Thread-1  ]: Began compiling node model.boston_crime_project.crime_fact
+[0m12:42:44.510288 [debug] [Thread-1  ]: Writing injected SQL for node "model.boston_crime_project.crime_fact"
+[0m12:42:44.559848 [debug] [Thread-1  ]: Timing info for model.boston_crime_project.crime_fact (compile): 2025-04-06 12:42:44.495154 => 2025-04-06 12:42:44.559440
+[0m12:42:44.564595 [debug] [Thread-1  ]: Began executing node model.boston_crime_project.crime_fact
+[0m12:42:44.850384 [debug] [Thread-1  ]: Writing runtime sql for node "model.boston_crime_project.crime_fact"
+[0m12:42:44.896500 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:42:45.044012 [debug] [Thread-1  ]: On model.boston_crime_project.crime_fact: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "my_boston_crime_profile", "target_name": "dev", "node_id": "model.boston_crime_project.crime_fact"} */
+
+  
+    
+
+    create or replace table `galvanic-flame-447801-n5`.`boston_crime_boston_crime`.`crime_fact`
+    partition by range_bucket(
+            year,
+            generate_array(, , )
+        )
+    
+    OPTIONS()
+    as (
+      
+
+WITH casted AS (
+    SELECT
+        CAST(INCIDENT_NUMBER AS STRING) AS incident_number,
+        CAST(OFFENSE_CODE AS INT64) AS offense_code,
+        OFFENSE_CODE_GROUP AS offense_code_group,
+        OFFENSE_DESCRIPTION AS offense_description,
+        DISTRICT AS district,
+        REPORTING_AREA AS reporting_area,
+        SHOOTING AS shooting,
+        CAST(OCCURRED_ON_DATE AS TIMESTAMP) AS occurred_on_date,
+        CAST(YEAR AS INT64) AS year,
+        CAST(MONTH AS INT64) AS month,
+        DAY_OF_WEEK AS day_of_week,
+        CAST(HOUR AS INT64) AS hour,
+        UCR_PART AS ucr_part,
+        STREET AS street,
+        CAST(Lat AS FLOAT64) AS lat,
+        CAST(Long AS FLOAT64) AS long
+    FROM `galvanic-flame-447801-n5`.`boston_crime`.`crime_incidents_stg`
+)
+
+SELECT * FROM casted
+    );
+  
+[0m12:42:45.416648 [debug] [Thread-1  ]: BigQuery adapter: Retry attempt 1 of 1 after error: BadRequest('Syntax error: Expected ")" but got "," at [9:28]; reason: invalidQuery, location: query, message: Syntax error: Expected ")" but got "," at [9:28]')
+[0m12:42:45.775259 [error] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=galvanic-flame-447801-n5&j=bq:US:e452daee-f0d8-43d7-ae24-d9ad2e715033&page=queryresults
+[0m12:42:45.777542 [debug] [Thread-1  ]: Timing info for model.boston_crime_project.crime_fact (execute): 2025-04-06 12:42:44.568661 => 2025-04-06 12:42:45.777424
+[0m12:42:45.788473 [debug] [Thread-1  ]: Database Error in model crime_fact (models/mart/crime_fact.sql)
+  Syntax error: Expected ")" but got "," at [9:28]
+  compiled Code at target/run/boston_crime_project/models/mart/crime_fact.sql
+[0m12:42:45.794615 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd85b70d9-0e83-4f64-83e2-2d8a4b8aa8fc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80af1d0fd0>]}
+[0m12:42:45.800927 [error] [Thread-1  ]: 1 of 1 ERROR creating sql incremental model boston_crime_boston_crime.crime_fact  [[31mERROR[0m in 1.31s]
+[0m12:42:45.816006 [debug] [Thread-1  ]: Finished running node model.boston_crime_project.crime_fact
+[0m12:42:45.829971 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:42:45.836688 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:42:45.841410 [debug] [MainThread]: Connection 'model.boston_crime_project.crime_fact' was properly closed.
+[0m12:42:45.846066 [info ] [MainThread]: 
+[0m12:42:45.851081 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 2.50 seconds (2.50s).
+[0m12:42:45.856876 [debug] [MainThread]: Command end result
+[0m12:42:45.942531 [info ] [MainThread]: 
+[0m12:42:45.947776 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m12:42:45.952865 [info ] [MainThread]: 
+[0m12:42:45.958777 [error] [MainThread]: [33mDatabase Error in model crime_fact (models/mart/crime_fact.sql)[0m
+[0m12:42:45.963905 [error] [MainThread]:   Syntax error: Expected ")" but got "," at [9:28]
+[0m12:42:45.969162 [error] [MainThread]:   compiled Code at target/run/boston_crime_project/models/mart/crime_fact.sql
+[0m12:42:45.974974 [info ] [MainThread]: 
+[0m12:42:45.980420 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m12:42:45.985807 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f808d715790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80af1ecdc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80af1ec640>]}
+[0m12:42:45.991031 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-04-06 12:47:37.973259 | 9df95b92-27b1-4ab1-a781-a785aaa473ba ==============================
+[0m12:47:37.973259 [info ] [MainThread]: Running with dbt=1.4.9
+[0m12:47:37.977244 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/opt/dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['crime_fact'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m12:47:37.978924 [debug] [MainThread]: Tracking: tracking
+[0m12:47:37.989771 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bb9d13fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bb9d13b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bb9d13e80>]}
+[0m12:47:38.023938 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m12:47:38.271749 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m12:47:38.274242 [debug] [MainThread]: Partial parsing: updated file: boston_crime_project://models/mart/crime_fact.sql
+[0m12:47:38.329964 [debug] [MainThread]: 1699: static parser successfully parsed mart/crime_fact.sql
+[0m12:47:38.402263 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9df95b92-27b1-4ab1-a781-a785aaa473ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bdbac10d0>]}
+[0m12:47:38.422534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9df95b92-27b1-4ab1-a781-a785aaa473ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bdc936ee0>]}
+[0m12:47:38.423881 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 337 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m12:47:38.425550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9df95b92-27b1-4ab1-a781-a785aaa473ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bdc99f520>]}
+[0m12:47:38.432328 [info ] [MainThread]: 
+[0m12:47:38.443838 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:47:38.453413 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5'
+[0m12:47:38.459015 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:47:39.109990 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5_boston_crime_boston_crime'
+[0m12:47:39.114681 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:47:39.612202 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9df95b92-27b1-4ab1-a781-a785aaa473ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bb9cf1910>]}
+[0m12:47:39.615177 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:47:39.617200 [info ] [MainThread]: 
+[0m12:47:39.642195 [debug] [Thread-1  ]: Began running node model.boston_crime_project.crime_fact
+[0m12:47:39.644370 [info ] [Thread-1  ]: 1 of 1 START sql incremental model boston_crime_boston_crime.crime_fact ........ [RUN]
+[0m12:47:39.646823 [debug] [Thread-1  ]: Acquiring new bigquery connection 'model.boston_crime_project.crime_fact'
+[0m12:47:39.648456 [debug] [Thread-1  ]: Began compiling node model.boston_crime_project.crime_fact
+[0m12:47:39.654340 [debug] [Thread-1  ]: Writing injected SQL for node "model.boston_crime_project.crime_fact"
+[0m12:47:39.666336 [debug] [Thread-1  ]: Timing info for model.boston_crime_project.crime_fact (compile): 2025-04-06 12:47:39.649879 => 2025-04-06 12:47:39.666150
+[0m12:47:39.667616 [debug] [Thread-1  ]: Began executing node model.boston_crime_project.crime_fact
+[0m12:47:39.782563 [debug] [Thread-1  ]: Writing runtime sql for node "model.boston_crime_project.crime_fact"
+[0m12:47:39.809209 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:47:39.869972 [debug] [Thread-1  ]: On model.boston_crime_project.crime_fact: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "my_boston_crime_profile", "target_name": "dev", "node_id": "model.boston_crime_project.crime_fact"} */
+
+  
+    
+
+    create or replace table `galvanic-flame-447801-n5`.`boston_crime_boston_crime`.`crime_fact`
+    
+    cluster by year, month
+    OPTIONS()
+    as (
+      
+
+WITH casted AS (
+    SELECT
+        CAST(INCIDENT_NUMBER AS STRING) AS incident_number,
+        CAST(OFFENSE_CODE AS INT64) AS offense_code,
+        OFFENSE_CODE_GROUP AS offense_code_group,
+        OFFENSE_DESCRIPTION AS offense_description,
+        DISTRICT AS district,
+        REPORTING_AREA AS reporting_area,
+        SHOOTING AS shooting,
+        CAST(OCCURRED_ON_DATE AS TIMESTAMP) AS occurred_on_date,
+        CAST(YEAR AS INT64) AS year,
+        CAST(MONTH AS INT64) AS month,
+        DAY_OF_WEEK AS day_of_week,
+        CAST(HOUR AS INT64) AS hour,
+        UCR_PART AS ucr_part,
+        STREET AS street,
+        CAST(Lat AS FLOAT64) AS lat,
+        CAST(Long AS FLOAT64) AS long
+    FROM `galvanic-flame-447801-n5`.`boston_crime`.`crime_incidents_stg`
+)
+
+SELECT * FROM casted
+    );
+  
+[0m12:47:40.328211 [debug] [Thread-1  ]: BigQuery adapter: Unhandled error while running:
+/* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "my_boston_crime_profile", "target_name": "dev", "node_id": "model.boston_crime_project.crime_fact"} */
+
+  
+    
+
+    create or replace table `galvanic-flame-447801-n5`.`boston_crime_boston_crime`.`crime_fact`
+    
+    cluster by year, month
+    OPTIONS()
+    as (
+      
+
+WITH casted AS (
+    SELECT
+        CAST(INCIDENT_NUMBER AS STRING) AS incident_number,
+        CAST(OFFENSE_CODE AS INT64) AS offense_code,
+        OFFENSE_CODE_GROUP AS offense_code_group,
+        OFFENSE_DESCRIPTION AS offense_description,
+        DISTRICT AS district,
+        REPORTING_AREA AS reporting_area,
+        SHOOTING AS shooting,
+        CAST(OCCURRED_ON_DATE AS TIMESTAMP) AS occurred_on_date,
+        CAST(YEAR AS INT64) AS year,
+        CAST(MONTH AS INT64) AS month,
+        DAY_OF_WEEK AS day_of_week,
+        CAST(HOUR AS INT64) AS hour,
+        UCR_PART AS ucr_part,
+        STREET AS street,
+        CAST(Lat AS FLOAT64) AS lat,
+        CAST(Long AS FLOAT64) AS long
+    FROM `galvanic-flame-447801-n5`.`boston_crime`.`crime_incidents_stg`
+)
+
+SELECT * FROM casted
+    );
+  
+[0m12:47:40.331291 [debug] [Thread-1  ]: BigQuery adapter: 404 Not found: Dataset galvanic-flame-447801-n5:boston_crime_boston_crime was not found in location us-east1; reason: notFound, message: Not found: Dataset galvanic-flame-447801-n5:boston_crime_boston_crime was not found in location us-east1
+
+Location: us-east1
+Job ID: 657ce11b-28c7-486b-9232-1fcbb409bc25
+
+[0m12:47:40.333825 [debug] [Thread-1  ]: Timing info for model.boston_crime_project.crime_fact (execute): 2025-04-06 12:47:39.668845 => 2025-04-06 12:47:40.333690
+[0m12:47:40.342239 [debug] [Thread-1  ]: Runtime Error in model crime_fact (models/mart/crime_fact.sql)
+  404 Not found: Dataset galvanic-flame-447801-n5:boston_crime_boston_crime was not found in location us-east1; reason: notFound, message: Not found: Dataset galvanic-flame-447801-n5:boston_crime_boston_crime was not found in location us-east1
+  
+  Location: us-east1
+  Job ID: 657ce11b-28c7-486b-9232-1fcbb409bc25
+  
+[0m12:47:40.345053 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9df95b92-27b1-4ab1-a781-a785aaa473ba', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bd97b5e50>]}
+[0m12:47:40.347660 [error] [Thread-1  ]: 1 of 1 ERROR creating sql incremental model boston_crime_boston_crime.crime_fact  [[31mERROR[0m in 0.70s]
+[0m12:47:40.353310 [debug] [Thread-1  ]: Finished running node model.boston_crime_project.crime_fact
+[0m12:47:40.359058 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:47:40.362100 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:47:40.364091 [debug] [MainThread]: Connection 'model.boston_crime_project.crime_fact' was properly closed.
+[0m12:47:40.365908 [info ] [MainThread]: 
+[0m12:47:40.368745 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 1.93 seconds (1.93s).
+[0m12:47:40.372731 [debug] [MainThread]: Command end result
+[0m12:47:40.416737 [info ] [MainThread]: 
+[0m12:47:40.422912 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m12:47:40.428119 [info ] [MainThread]: 
+[0m12:47:40.434204 [error] [MainThread]: [33mRuntime Error in model crime_fact (models/mart/crime_fact.sql)[0m
+[0m12:47:40.440976 [error] [MainThread]:   404 Not found: Dataset galvanic-flame-447801-n5:boston_crime_boston_crime was not found in location us-east1; reason: notFound, message: Not found: Dataset galvanic-flame-447801-n5:boston_crime_boston_crime was not found in location us-east1
+[0m12:47:40.447050 [error] [MainThread]:   
+[0m12:47:40.453173 [error] [MainThread]:   Location: us-east1
+[0m12:47:40.458501 [error] [MainThread]:   Job ID: 657ce11b-28c7-486b-9232-1fcbb409bc25
+[0m12:47:40.463709 [error] [MainThread]:   
+[0m12:47:40.470423 [info ] [MainThread]: 
+[0m12:47:40.476001 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m12:47:40.481762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bdc99f4c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bdc936be0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7bdc936dc0>]}
+[0m12:47:40.486526 [debug] [MainThread]: Flushing usage events
+
+
+============================== 2025-04-06 12:50:35.062681 | fef1d513-704e-4e96-b200-ee5354519043 ==============================
+[0m12:50:35.062681 [info ] [MainThread]: Running with dbt=1.4.9
+[0m12:50:35.068034 [debug] [MainThread]: running dbt with arguments {'write_json': True, 'use_colors': True, 'printer_width': 80, 'version_check': True, 'partial_parse': True, 'static_parser': True, 'profiles_dir': '/opt/dbt', 'send_anonymous_usage_stats': True, 'quiet': False, 'no_print': False, 'cache_selected_only': False, 'select': ['crime_fact'], 'which': 'run', 'rpc_method': 'run', 'indirect_selection': 'eager'}
+[0m12:50:35.070239 [debug] [MainThread]: Tracking: tracking
+[0m12:50:35.082651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ed30a4880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ed30a4e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ed30a4eb0>]}
+[0m12:50:35.132087 [debug] [MainThread]: checksum: 07ac7676dbf91b944d5fe41bac352fb2dda62b33015cbd1e52faa2a2c71f6d73, vars: {}, profile: None, target: None, version: 1.4.9
+[0m12:50:35.169381 [info ] [MainThread]: Unable to do partial parsing because a project config has changed
+[0m12:50:35.171121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'fef1d513-704e-4e96-b200-ee5354519043', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ed30ba5b0>]}
+[0m12:50:36.389692 [debug] [MainThread]: 1699: static parser successfully parsed mart/crime_fact.sql
+[0m12:50:36.502326 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'fef1d513-704e-4e96-b200-ee5354519043', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ef9e047f0>]}
+[0m12:50:36.524876 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'fef1d513-704e-4e96-b200-ee5354519043', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ef8ed12e0>]}
+[0m12:50:36.526206 [info ] [MainThread]: Found 1 model, 0 tests, 0 snapshots, 0 analyses, 337 macros, 0 operations, 0 seed files, 1 source, 0 exposures, 0 metrics
+[0m12:50:36.527397 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fef1d513-704e-4e96-b200-ee5354519043', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ef8f04dc0>]}
+[0m12:50:36.529671 [info ] [MainThread]: 
+[0m12:50:36.532780 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:50:36.535284 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5'
+[0m12:50:36.536615 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m12:50:37.038815 [debug] [ThreadPool]: Acquiring new bigquery connection 'list_galvanic-flame-447801-n5_boston_crime'
+[0m12:50:37.043830 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m12:50:37.598755 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'fef1d513-704e-4e96-b200-ee5354519043', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ef8ec82b0>]}
+[0m12:50:37.605566 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m12:50:37.610598 [info ] [MainThread]: 
+[0m12:50:37.682156 [debug] [Thread-1  ]: Began running node model.boston_crime_project.crime_fact
+[0m12:50:37.688529 [info ] [Thread-1  ]: 1 of 1 START sql incremental model boston_crime.crime_fact ..................... [RUN]
+[0m12:50:37.696801 [debug] [Thread-1  ]: Acquiring new bigquery connection 'model.boston_crime_project.crime_fact'
+[0m12:50:37.701517 [debug] [Thread-1  ]: Began compiling node model.boston_crime_project.crime_fact
+[0m12:50:37.723663 [debug] [Thread-1  ]: Writing injected SQL for node "model.boston_crime_project.crime_fact"
+[0m12:50:37.769615 [debug] [Thread-1  ]: Timing info for model.boston_crime_project.crime_fact (compile): 2025-04-06 12:50:37.705654 => 2025-04-06 12:50:37.769206
+[0m12:50:37.774269 [debug] [Thread-1  ]: Began executing node model.boston_crime_project.crime_fact
+[0m12:50:38.130769 [debug] [Thread-1  ]: Writing runtime sql for node "model.boston_crime_project.crime_fact"
+[0m12:50:38.162901 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m12:50:38.246291 [debug] [Thread-1  ]: On model.boston_crime_project.crime_fact: /* {"app": "dbt", "dbt_version": "1.4.9", "profile_name": "my_boston_crime_profile", "target_name": "dev", "node_id": "model.boston_crime_project.crime_fact"} */
+
+  
+    
+
+    create or replace table `galvanic-flame-447801-n5`.`boston_crime`.`crime_fact`
+    
+    cluster by year, month
+    OPTIONS()
+    as (
+      
+
+WITH casted AS (
+    SELECT
+        CAST(INCIDENT_NUMBER AS STRING) AS incident_number,
+        CAST(OFFENSE_CODE AS INT64) AS offense_code,
+        OFFENSE_CODE_GROUP AS offense_code_group,
+        OFFENSE_DESCRIPTION AS offense_description,
+        DISTRICT AS district,
+        REPORTING_AREA AS reporting_area,
+        SHOOTING AS shooting,
+        CAST(OCCURRED_ON_DATE AS TIMESTAMP) AS occurred_on_date,
+        CAST(YEAR AS INT64) AS year,
+        CAST(MONTH AS INT64) AS month,
+        DAY_OF_WEEK AS day_of_week,
+        CAST(HOUR AS INT64) AS hour,
+        UCR_PART AS ucr_part,
+        STREET AS street,
+        CAST(Lat AS FLOAT64) AS lat,
+        CAST(Long AS FLOAT64) AS long
+    FROM `galvanic-flame-447801-n5`.`boston_crime`.`crime_incidents_stg`
+)
+
+SELECT * FROM casted
+    );
+  
+[0m12:50:45.678531 [debug] [Thread-1  ]: BigQuery adapter: https://console.cloud.google.com/bigquery?project=galvanic-flame-447801-n5&j=bq:us-east1:2dd30b29-9b34-44bf-8f5d-39325f7f2ad4&page=queryresults
+[0m12:50:45.779426 [debug] [Thread-1  ]: Timing info for model.boston_crime_project.crime_fact (execute): 2025-04-06 12:50:37.778595 => 2025-04-06 12:50:45.779251
+[0m12:50:45.784517 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'fef1d513-704e-4e96-b200-ee5354519043', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ef6c2ad60>]}
+[0m12:50:45.788152 [info ] [Thread-1  ]: 1 of 1 OK created sql incremental model boston_crime.crime_fact ................ [[32mCREATE TABLE (832.4k rows, 121.8 MB processed)[0m in 8.09s]
+[0m12:50:45.795415 [debug] [Thread-1  ]: Finished running node model.boston_crime_project.crime_fact
+[0m12:50:45.801880 [debug] [MainThread]: Acquiring new bigquery connection 'master'
+[0m12:50:45.805263 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m12:50:45.807748 [debug] [MainThread]: Connection 'model.boston_crime_project.crime_fact' was properly closed.
+[0m12:50:45.810180 [info ] [MainThread]: 
+[0m12:50:45.813037 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 9.28 seconds (9.28s).
+[0m12:50:45.816122 [debug] [MainThread]: Command end result
+[0m12:50:45.858074 [info ] [MainThread]: 
+[0m12:50:45.861774 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m12:50:45.865828 [info ] [MainThread]: 
+[0m12:50:45.868834 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m12:50:45.871832 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ed30ba790>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ef9e6a580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2ef9e6a7c0>]}
+[0m12:50:45.874462 [debug] [MainThread]: Flushing usage events

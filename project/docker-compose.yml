@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  ####################################################################
+  # Postgres Database for Airflow Metadata
+  ####################################################################
+  airflow-db:
+    image: postgres:13
+    container_name: airflow-db
+    environment:   
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  ####################################################################
+  # Airflow Scheduler
+  ####################################################################
+  airflow-scheduler:
+    build: .
+    container_name: airflow-scheduler
+    depends_on:
+      - airflow-db
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      - AIRFLOW__CORE__FERNET_KEY=7ZTCyipSTUTsbJJvce4oWPKAwPIGujevWHn3xl_4l2A=
+      - AIRFLOW__WEBSERVER__SECRET_KEY=ZcMIhJpzxWM8fELrjBFP6Q
+      - PIP_INSTALL_EXTRA_REQUIREMENTS=openpyxl
+      - AIRFLOW_UID=50000
+      - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/creds.json
+
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/logs:/opt/airflow/logs
+      - ./dbt:/opt/dbt
+      - ./keys:/opt/airflow/keys
+
+    command: >
+      bash -c "
+      airflow db init &&
+      airflow users create --username admin --password admin --firstname Air --lastname Flow --role Admin --email admin@example.com || true &&
+      exec airflow scheduler
+      "
+    restart: always
+
+  ####################################################################
+  # Airflow Webserver
+  ####################################################################
+  airflow-webserver:
+    build: .
+    container_name: airflow-webserver
+    depends_on:
+      - airflow-scheduler
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
+      - AIRFLOW__CORE__FERNET_KEY=7ZTCyipSTUTsbJJvce4oWPKAwPIGujevWHn3xl_4l2A=
+      - AIRFLOW__WEBSERVER__SECRET_KEY=ZcMIhJpzxWM8fELrjBFP6Q
+      - AIRFLOW_UID=50000
+      - PIP_INSTALL_EXTRA_REQUIREMENTS=openpyxl      
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./airflow/logs:/opt/airflow/logs
+      - ./dbt:/opt/dbt
+    ports:
+      - "8080:8080"
+    command: webserver
+    restart: always
+
+
+volumes:
+  postgres_data:

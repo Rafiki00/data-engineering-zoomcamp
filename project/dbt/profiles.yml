@@ -1,0 +1,10 @@
+my_boston_crime_profile:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: galvanic-flame-447801-n5
+      dataset: boston_crime
+      keyfile: /opt/airflow/keys/creds.json
+      threads: 4

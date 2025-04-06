@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: boston_crime            
+    database: galvanic-flame-447801-n5    
+    schema: boston_crime          
+    tables:
+      - name: crime_incidents_stg 
+        description: "Staging table for crime incidents data"

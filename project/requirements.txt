@@ -1,0 +1,4 @@
+openpyxl
+dbt-bigquery==1.4.4
+
+

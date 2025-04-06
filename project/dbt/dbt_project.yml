@@ -1,0 +1,11 @@
+name: 'boston_crime_project'
+version: '1.0.0'
+config-version: 2
+profile: 'my_boston_crime_profile'
+
+models:
+  boston_crime_project:
+    mart:
+      +materialized: incremental
+      +incremental_strategy: merge
+      +unique_key: incident_number
