@@ -7,3 +7,5 @@ sources:
     tables:
       - name: crime_incidents_stg 
         description: "Staging table for crime incidents data"
+      - name: police_districts_stg
+        description: "Staging table for police districts data"

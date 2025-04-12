@@ -10,9 +10,9 @@ from airflow.providers.google.cloud.transfers.gcs_to_bigquery import GCSToBigQue
 
 # Constants
 GCS_BUCKET = "boston-crime"
-XLSX_GCS_PATH = "raw/rmsoffensecodes.xlsx"   
+XLSX_GCS_PATH = "raw/reference/rmsoffensecodes.xlsx"   
 CSV_LOCAL_PATH = "/tmp/rmsoffensecodes.csv" 
-CSV_GCS_PATH = "raw/rmsoffensecodes.csv"  
+CSV_GCS_PATH = "raw/reference/rmsoffensecodes.csv"  
 PROJECT_ID = "galvanic-flame-447801-n5"
 DATASET_NAME = "boston_crime"
 TABLE_NAME = "offense_codes_stg"
