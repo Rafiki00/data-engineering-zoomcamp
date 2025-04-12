@@ -27,8 +27,8 @@ services:
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
-      - AIRFLOW__CORE__FERNET_KEY=7ZTCyipSTUTsbJJvce4oWPKAwPIGujevWHn3xl_4l2A=
-      - AIRFLOW__WEBSERVER__SECRET_KEY=ZcMIhJpzxWM8fELrjBFP6Q
+      - AIRFLOW__CORE__FERNET_KEY=MY_FERNET_KEY
+      - AIRFLOW__WEBSERVER__SECRET_KEY=MY_WEBSERVER_KEY
       - PIP_INSTALL_EXTRA_REQUIREMENTS=openpyxl
       - AIRFLOW_UID=50000
       - GOOGLE_APPLICATION_CREDENTIALS=/opt/airflow/keys/creds.json
@@ -59,8 +59,8 @@ services:
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@airflow-db:5432/airflow
-      - AIRFLOW__CORE__FERNET_KEY=7ZTCyipSTUTsbJJvce4oWPKAwPIGujevWHn3xl_4l2A=
-      - AIRFLOW__WEBSERVER__SECRET_KEY=ZcMIhJpzxWM8fELrjBFP6Q
+      - AIRFLOW__CORE__FERNET_KEY=MY_FERNET_KEY
+      - AIRFLOW__WEBSERVER__SECRET_KEY=MY_WEBSERVER_KEY
       - AIRFLOW_UID=50000
       - PIP_INSTALL_EXTRA_REQUIREMENTS=openpyxl      
     volumes:
